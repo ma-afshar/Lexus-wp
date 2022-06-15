@@ -1,0 +1,1291 @@
+@font-face {
+    font-family: 'Open-Sans';
+    src: url('../fonts/open-sans/Open-Sans.woff2') format('woff2');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open-Sans', sans-serif;
+}
+
+/* Header : -search animation,-under menu */
+
+#WP-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 7vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-areas: ". WPH-main .";
+    box-shadow: 0 3px 3px rgba(221, 221, 221, 0.75);
+    z-index: 10;
+}
+
+#WPH-main {
+    overflow: hidden;
+    grid-area: WPH-main;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 15% 12.5% 45% 12.5% 15%;
+    grid-template-areas: "WPHD-logo . WPHD-menu . WPHD-search";
+}
+
+#WPHM-logo {
+    overflow: hidden;
+    grid-area: WPHD-logo;
+    display: grid;
+    justify-content: start;
+    align-content: center;
+}
+
+#WPHM-menu {
+    overflow: hidden;
+    grid-area: WPHD-menu;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: "WPHDM-nav";
+}
+
+#WPHM-menu>nav {
+    display: grid;
+    grid-area: WPHDM-nav;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: "WPHDMN-ul";
+}
+
+#WPHM-menu>nav>ul {
+    grid-area: WPHDMN-ul;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#WPHM-menu>nav>ul>li>a {
+    text-decoration: none;
+    color: #000;
+    font-size: smaller;
+}
+
+#WPHM-search {
+    overflow: hidden;
+    grid-area: WPHD-search;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: "WPHDS-form";
+}
+
+#WPHM-search>form {
+    grid-area: WPHDS-form;
+    display: grid;
+    align-items: center;
+    justify-items: end;
+}
+
+#WPHM-search>form>button {
+    font-size: x-large;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    cursor: pointer;
+}
+
+/* Slider: pics or videos or both */
+.WPS-IMAGE{
+    height: 93vh;
+}
+/* Shopping tools : ✔ */
+
+#WP-shoppingtools {
+    width: 100%;
+    height: 30vh;
+    display: grid;
+    justify-items: center;
+}
+
+#WPSt-main {
+    width: 90%;
+    border-bottom: 2px solid #ede;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: "WPStM-title" "WPStM-option" "WPStM-option";
+}
+
+#WPStM-title {
+    grid-area: WPStM-title;
+    display: grid;
+    align-content: end;
+    justify-content: center;
+}
+
+#WPStM-title>h2 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #545;
+}
+
+#WPStM-option {
+    grid-area: WPStM-option;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: ". . . WPStMO-build WPStMO-find WPStMO-offer WPStMO-compare . . .";
+}
+
+#WPStMO-build {
+    grid-area: WPStMO-build;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+#WPStMO-build>a {
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+}
+
+#WPStMO-build>a>img {
+    padding-top: 15px;
+}
+
+#WPStMO-build>a>h3 {
+    padding-top: 5%;
+    color: #545;
+}
+
+#WPStMO-find {
+    grid-area: WPStMO-find;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+#WPStMO-find>a {
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+}
+
+#WPStMO-find>a>h3 {
+    padding-top: 5%;
+    color: #545;
+}
+
+#WPStMO-offer {
+    grid-area: WPStMO-offer;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+#WPStMO-offer>a {
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+}
+
+#WPStMO-offer>a>h3 {
+    padding-top: 5%;
+    color: #545;
+}
+
+#WPStMO-compare {
+    grid-area: WPStMO-compare;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+#WPStMO-compare>a {
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+}
+
+#WPStMO-compare>a>h3 {
+    padding-top: 5%;
+    color: #545;
+}
+
+/* Limit: ✔ */
+
+#WP-limit {
+    width: 100%;
+    height: 85vh;
+    display: grid;
+    justify-items: center;
+}
+
+#WPL-main {
+    width: 85rem;
+    border-bottom: 2px solid #ede;
+    display: grid;
+    padding-top: 1%;
+    grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: 1fr;
+}
+
+#WPLM-title {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+#WPLM-title>h2 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #545;
+}
+
+#WPLM-section {
+    grid-row: 3/14;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#WPLMS-lc {
+    border-right: 3.5px solid #fff;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background-image: url(../images/limit/lc.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform .5s;
+}
+#WPLMS-lc:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+
+#WPLMS-lc>div {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPLMS-lc>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPLMS-lc>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPLMS-lc>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPLMS-lx {
+    border-right: 3.5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-bottom: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-image: url(../images/limit/lx.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPLMS-lx:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPLMS-lx>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPLMS-lx>div>h3 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+#WPLMS-lx>div>button {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPLMS-lx>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPLMS-es {
+    border-right: 3.5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-top: 3.5px solid #fff;
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-image: url(../images/limit/es.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPLMS-es:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPLMS-es>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPLMS-es>div>h3 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 7%;
+}
+
+#WPLMS-es>div>button {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 3.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPLMS-es>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPLMS-nx {
+    border-left: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/3;
+    grid-column: 3/4;
+    background-image: url(../images/limit/nx.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPLMS-nx:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPLMS-nx>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPLMS-nx>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPLMS-nx>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPLMS-nx>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+/* Color : -change car's color/img  */
+
+#WP-color {
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    justify-items: center;
+}
+
+#WPC-main {
+    width: 85rem;
+    border-bottom: 2px solid #ede;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 3fr 4fr;
+}
+#WPCM-title {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: grid;
+    align-content: center;
+    justify-content: start;
+}
+#WPCM-title>h2 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #545;
+    padding-left: 25px;
+}
+#WPCM-descript {
+    grid-row: 2/4;
+    grid-column: 1/2;
+}
+#WPCM-descript > p{
+    font-size: 18px;
+    text-align: justify;
+    padding-left: 25px;
+}
+#WPCM-car {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-image: url(../images/color/gsf-white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#WPCM-color {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(15,1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+#WPCMC-white {
+    border: 1px solid #bbb;
+    grid-row: 1/2;
+    grid-column: 6/7;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15%;
+}
+
+#WPCMC-white:hover {
+    width: 3rem;
+    height: 3rem;
+}
+
+#WPCMC-black {
+    grid-row: 1/2;
+    grid-column: 7/8;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15%;
+}
+
+#WPCMC-black:hover {
+    width: 3rem;
+    height: 3rem;
+}
+
+#WPCMC-blue {
+    grid-row: 1/2;
+    grid-column: 8/9;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15%;
+}
+
+#WPCMC-blue:hover {
+    width: 3rem;
+    height: 3rem;
+}
+
+#WPCMC-red {
+    grid-row: 1/2;
+    grid-column: 9/10;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15%;
+}
+
+#WPCMC-red:hover {
+    width: 3rem;
+    height: 3rem;
+}
+
+#WPCMC-yellow {
+    grid-row: 1/2;
+    grid-column: 10/11;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15%;
+}
+
+#WPCMC-yellow:hover {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Owner: ✔ */
+
+#WP-owner {
+    width: 100%;
+    height: 85vh;
+    display: grid;
+    justify-items: center;
+}
+#WPO-main {
+    width: 85rem;
+    border-bottom: 2px solid #ede;
+    display: grid;
+    padding-top: 1%;
+    grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: 1fr;
+}
+
+#WPOM-title {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+#WPOM-title>h2 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #545;
+}
+
+#WPOM-section {
+    grid-row: 3/14;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#WPOMS-app {
+    border-right: 3.5px solid #fff;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background-image: url(../images/owner/app.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform .5s;
+}
+#WPOMS-app:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+
+#WPOMS-app>div {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPOMS-app>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPOMS-app>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPOMS-app>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPOMS-service {
+    border-right: 3.5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-bottom: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-image: url(../images/owner/service.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPOMS-service:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPOMS-service>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPOMS-service>div>h3 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+#WPOMS-service>div>button {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPOMS-service>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPOMS-owner {
+    border-right: 3.5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-top: 3.5px solid #fff;
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-image: url(../images/owner/owner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPOMS-owner:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPOMS-owner>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPOMS-owner>div>h3 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 7%;
+}
+
+#WPOMS-owner>div>button {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 3.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPOMS-owner>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPOMS-give {
+    border-left: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/3;
+    grid-column: 3/4;
+    background-image: url(../images/owner/give.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPOMS-give:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPOMS-give>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPOMS-give>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPOMS-give>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPOMS-give>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+/* Discover: ✔ */
+
+#WP-discover {
+    width: 100%;
+    height: 85vh;
+    display: grid;
+    justify-items: center;
+}
+#WPD-main {
+    width: 85rem;
+    display: grid;
+    padding-top: 1%;
+    grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: 1fr;
+}
+
+#WPDM-title {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+#WPDM-title>h2 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #545;
+}
+
+#WPDM-section {
+    grid-row: 3/14;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#WPDMS-idea {
+    border-right: 3.5px solid #fff;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background-image: url(../images/discover/idea.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform .5s;
+}
+#WPDMS-idea:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+
+#WPDMS-idea>div {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPDMS-idea>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPDMS-idea>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPDMS-idea>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+#WPDMS-plus {
+    border-right: 3.5px solid #fff;
+    border-left: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/3;
+    grid-column: 2/3;
+    background-image: url(../images/discover/plus.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPDMS-plus:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPDMS-plus>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPDMS-plus>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPDMS-plus>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPDMS-plus>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+
+#WPDMS-special {
+    border-left: 3.5px solid #fff;
+    display: grid;
+    grid-row: 1/3;
+    grid-column: 3/4;
+    background-image: url(../images/discover/special.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+#WPDMS-special:hover {
+    transform: scale(1.07);
+    transition: transform .5s;
+    z-index: 1;
+    border:none;
+}
+#WPDMS-special>div {
+    background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#WPDMS-special>div>h3 {
+    grid-row: 6/7;
+    grid-column: 1/2;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#WPDMS-special>div>button {
+    grid-row: 6/8;
+    grid-column: 1/2;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7.5%;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-radius: 4px;
+    outline: none;
+}
+
+#WPDMS-special>div>button:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+}
+
+/* Footer: ✔ */
+#WP-footer{
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    justify-items: center;
+    background-color: #000;
+} 
+#WPF-main {
+    width: 85rem;
+    display: grid;
+    grid-template-rows: 1.5fr .5fr 8fr .5fr 1.5fr;
+    grid-template-columns: repeat(4,1fr);
+}
+#WPFM-header{
+    grid-row: 1/2;
+    grid-column: 1/5;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10fr 1fr 1fr 1fr 1fr 1fr 10fr;
+    align-items: center;
+}
+#WPFMH-facebook{
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+#WPFMH-facebook>a{
+    color: #fff;
+    font-size: 25px;
+}
+#WPFMH-twitter{
+    grid-row: 1/2;
+    grid-column: 3/4;
+}
+#WPFMH-twitter>a{
+    color: #fff;
+    font-size: 25px;
+}
+#WPFMH-youtube{
+    grid-row: 1/2;
+    grid-column: 4/5;
+}
+#WPFMH-youtube>a{
+    color: #fff;
+    font-size: 25px;
+}
+#WPFMH-instagram{
+    grid-row: 1/2;
+    grid-column: 5/6;
+}
+#WPFMH-instagram>a{
+    color: #fff;
+    font-size: 25px;
+}
+#WPFMH-pinterest{
+    grid-row: 1/2;
+    grid-column: 6/7;
+}
+#WPFMH-pinterest>a{
+    color: #fff;
+    font-size: 25px;
+}
+#WPFM-menu{
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+#WPFM-brand{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+#WPFM-warranty{
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+#WPFM-help{    
+    grid-row: 3/4;
+    grid-column: 4/5;
+}
+
+#WPFM-footer{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-row: 5/6;
+    grid-column: 1/5;
+}
+#WPFM-footer>p{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+#WPFM-menu{
+    display: grid;
+}
+#WPFM-menu > ul {
+    display: grid;
+    justify-content: center;
+}
+#WPFM-menu > ul > li{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    list-style-type: none;
+}
+#WPFM-brand>ul{
+    display: grid;
+    justify-content: center;
+}
+#WPFM-brand > ul > li:first-child{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+#WPFM-brand > ul > li{
+    padding-bottom: 0;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+#WPFM-warranty>ul{
+    display: grid;
+    justify-content: center;
+}
+#WPFM-warranty > ul > li:first-child{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+#WPFM-warranty > ul > li{
+    padding-bottom: 0;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+#WPFM-help>ul{
+    display: grid;
+    justify-content: center;
+}
+#WPFM-help > ul > li:first-child{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+#WPFM-help > ul > li{
+    padding-bottom: 0;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    margin-bottom: 8px;
+    list-style-type: none;
+}
